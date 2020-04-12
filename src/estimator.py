@@ -78,17 +78,16 @@ def estimator(data):
     }
     SevereImpact = {
         'severeImpact_infectionsByRequestedTime': severeImpact_infectionsByRequestedTime,
-        'severeImpact_severeCasesByRequestTime': severeImpact_severeCasesByRequestTime,
-        'severeImpact_severeCasesByRequestTime': severeImpact_severeCasesByRequestTime,
+        'severeImpact_hospitalBedsByRequestedTime': severeImpact_hospitalBedsByRequestedTime,
         'severeImpact_severeCasesByRequestTime': severeImpact_severeCasesByRequestTime,
         'severeImpactCasesForICUByRequestTime': severeImpactCasesForICUByRequestTime,
         'severeImpact_casesForVentilatorsByRequestTime': severeImpact_casesForVentilatorsByRequestTime,
         'severeImpactDollarInFlight':severeImpactDollarInFlight
-    }
-    Estimator = {
+    } # pylint : disable=invalid-name
+    estimation = {
         'data':data, 'impact':Impact, 'severeImpact':SevereImpact 
     }
-    return json.dumps(Estimator, indent=3)
+    return json.dumps(estimation, indent=3)
 ESTIMATOR = estimator(data)
 print(ESTIMATOR)
 
